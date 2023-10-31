@@ -13,7 +13,7 @@ st.write("# This will be a page where a user can view and modify subject area de
 
 def get_subject_area_list():
     with my_cnx.cursor() as my_cur:
-        my_cur.execute("select * from SUBJECT_AREA")
+        my_cur.execute("select * from GOVERNANCE.SUBJECT_AREA")
         return my_cur.fetchall()
         
 if st.button('Get Subject Area List'):
