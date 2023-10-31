@@ -16,11 +16,11 @@ def get_subject_area_list():
         my_cur.execute("select * from SUBJECT_AREA")
         return my_cur.fetchall()
         
-if streamlit.button('Get Subject Area List'):
-    my_cnx = snowflake.connector.connect(**streamlit.secrets["snowflake"])
+if st.button('Get Subject Area List'):
+    my_cnx = snowflake.connector.connect(**st.secrets["snowflake"])
     my_data_rows = get_subject_area_list()
     my.cnx.close()
-    streamlit.dataframe(my_data_rows)
+    st.dataframe(my_data_rows)
 
 st.button('Add New')
     
